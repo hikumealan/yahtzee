@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title>Yahtzee</title>
+</head>
+<body>
+  <h1 id="dice1"></h1>
+  
+  <h1 id="dice2"></h1>
+  
+  <h1 id="dice3"></h1>
+  
+  <h1 id="dice4"></h1>
+  
+  <h1 id="dice5"></h1>
+  
+  <button click="rollDice()">Roll</button>
+
+<script>
+const dice = [
+  document.getElementById('dice1'),
+  document.getElementById('dice2'),
+  document.getElementById('dice3'),
+  document.getElementById('dice4'),
+  document.getElementById('dice5')
+];
+rollDice () => {
+  const rolling = setInterval(() => {
+    for (die in dice) {
+      die.innerHTML = Math.floor(Math.random() * 6) + 1;
+    }  
+  }, 300);
+  const setTimeout(() => {
+    clearInterval(rolling);
+  }, 1000);
+}
+</script>
+</body>
+</html>
